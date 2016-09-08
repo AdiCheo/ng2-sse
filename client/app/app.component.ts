@@ -6,7 +6,7 @@ import {Component, OnInit, ChangeDetectorRef} from 'angular2/core';
 })
 export class AppComponent implements  OnInit {
 
-    private EVENT_URL = 'http://localhost:8000/events';
+    private EVENT_URL = 'http://localhost:8080/events';
     private message: string = '0';
 
     constructor (private changeDetector: ChangeDetectorRef) {
@@ -19,7 +19,7 @@ export class AppComponent implements  OnInit {
 
         // listing to server messages
         this.ws.onmessage = (evt) => {
-            this.logServerMessage(evt.data);
+            this.logServerMessage(evt);
 
             // update the model
             this.message = evt.data;
