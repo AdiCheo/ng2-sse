@@ -32,7 +32,7 @@ server.route({
             'connection': 'keep-alive',
             'cache-control': 'no-cache',
             'Access-Control-Allow-Credentials': 'true',
-            'Access-Control-Allow-Origin': 'http://localhost:3001'
+            'Access-Control-Allow-Origin': '*'
         });
 
         channel.pipe(request.raw.res);
